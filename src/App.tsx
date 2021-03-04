@@ -1,11 +1,12 @@
 import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
+import Test from "./Test";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
+      {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
@@ -17,7 +18,9 @@ function App() {
           rel="noopener noreferrer">
           Learn React
         </a>
-      </header>
+      </header> */}
+      <Test data={{ a: 1, b: 2 }} />
+      <Test data={{ a: 1000, b: 2000 }} />
     </div>
   );
 }
