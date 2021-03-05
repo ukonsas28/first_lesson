@@ -1,5 +1,6 @@
 import React from "react";
 import style from "./test.module.scss";
+import Test2 from "./Test2";
 
 interface IProps {
   data: {
@@ -9,32 +10,37 @@ interface IProps {
 }
 interface IState {
   result: number;
+  value: string;
 }
 
 class Test extends React.Component<IProps, IState> {
   constructor(props: IProps) {
     super(props);
-    this.state = { result: 0 };
+    this.state = { result: 0, value: "" };
     this.test = this.test.bind(this);
   }
 
-  test2 = () => {
+  test2 = (a: any) => {
+    console.log(a, "1");
     const { result } = this.state;
-    this.setState({ result: result - 1 });
+    this.setState({ value: a });
   };
 
-  test() {
+  test(a: any) {
+    console.log(a, "2");
     const { result } = this.state;
-    this.setState({ result: result + 1 });
+    this.setState({ value: a });
   }
 
   render() {
     const {
       data: { a, b },
     } = this.props;
-    const { result } = this.state;
+    const { result, value } = this.state;
     return (
       <>
+        <Test2 func={this.test} />
+        <Test2 func={this.test2} />
         <button
           type="button"
           onClick={this.test}
@@ -50,6 +56,7 @@ class Test extends React.Component<IProps, IState> {
         <p>{a}</p>
         <p>{b}</p>
         <h1 className={style.test}>{result}</h1>
+        <h2>{value}</h2>
       </>
     );
   }
