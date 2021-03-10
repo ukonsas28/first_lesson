@@ -1,5 +1,5 @@
 import React from "react";
-import style from "./CustomCounter.module.scss";
+import ProductCard from "./ProductCard";
 import Button from "./Button";
 
 interface IProps {
@@ -33,26 +33,22 @@ class CustomCounter extends React.Component<IProps, IState> {
     const { count, increment, decrement } = this.state;
     return (
       <>
-        <div className={style.wrapper}>
-          <h1>Выбранный товар {title}</h1>
-          <div className={style.card}>
-            <Button
-              title={`Убрать ${decrement} ${title}`}
-              count={count}
-              handler={this.decrementHandle(decrement)}
-              type="decrement"
-              limit={limit}
-            />
-            <h1>{count}</h1>
-            <Button
-              title={`Добавить ${increment} ${title}`}
-              count={count}
-              handler={this.incrementHandle(increment)}
-              type="increment"
-              limit={limit}
-            />
-          </div>
-        </div>
+        <ProductCard title={title} count={count}>
+          <Button
+            title={`Убрать ${decrement} ${title}`}
+            count={count}
+            handler={this.decrementHandle(decrement)}
+            type="decrement"
+            limit={limit}
+          />
+          <Button
+            title={`Добавить ${increment} ${title}`}
+            count={count}
+            handler={this.incrementHandle(increment)}
+            type="increment"
+            limit={limit}
+          />
+        </ProductCard>
       </>
     );
   }
