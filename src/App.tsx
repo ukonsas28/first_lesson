@@ -1,11 +1,16 @@
 import React from "react";
 import "./App.css";
-import ClassComponent from "./ClassComponent";
+import CustomCounter from "./CustomCounter";
 
 function App() {
+  // eslint-disable-next-line no-console
+  console.log("App => start");
+
   return (
     <>
-      <ClassComponent count={33} />
+      <CustomCounter title="Яблоко" limit={13} />
+      <CustomCounter title="Апельсин" limit={8} />
+      <CustomCounter title="Груша" limit={25} />
     </>
   );
 }
