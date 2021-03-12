@@ -9,8 +9,8 @@ function App() {
   return (
     <>
       <CustomCounter title="Яблоко" limit={13} />
-      <CustomCounter title="Апельсин" limit={8} />
-      <CustomCounter title="Груша" limit={25} />
+      {/* <CustomCounter title="Апельсин" limit={8} />
+      <CustomCounter title="Груша" limit={25} /> */}
     </>
   );
 }

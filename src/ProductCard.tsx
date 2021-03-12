@@ -7,6 +7,8 @@ interface IProps {
 }
 
 class ProductCard extends React.PureComponent<IProps> {
+  componentDidMount() {}
+
   render() {
     const { title, count, children } = this.props;
     return (
