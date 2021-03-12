@@ -1,16 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 import CustomCounter from "./CustomCounter";
 
 function App() {
   // eslint-disable-next-line no-console
   console.log("App => start");
-
+  // const [a, setA] = useState(4);
   return (
     <>
+      {/* {a > 3 && <CustomCounter title="Груша" limit={25} />}
+      {a > 2 && <CustomCounter title="Яблоко" limit={13} />}
+      {a > 1 && <CustomCounter title="Апельсин" limit={8} />}
+      <button type="button" onClick={() => setA(a - 1)}>
+        push
+      </button> */}
+      <CustomCounter title="Груша" limit={25} />
       <CustomCounter title="Яблоко" limit={13} />
-      {/* <CustomCounter title="Апельсин" limit={8} />
-      <CustomCounter title="Груша" limit={25} /> */}
+      <CustomCounter title="Апельсин" limit={8} />
     </>
   );
 }

@@ -24,7 +24,7 @@ class CustomCounter extends React.Component<IProps, IState> {
   //   if (prevState.count === 3) {
   //     return { increment: 2 };
   //   }
-  //   return {};
+  //   return null;
   // }
 
   // shouldComponentUpdate(nextProps: IProps, nextState: IState): boolean {
@@ -36,9 +36,17 @@ class CustomCounter extends React.Component<IProps, IState> {
   //   }
   //   return true;
   // }
+
   // componentDidUpdate(prevProps: IProps, prevState: IState) {
-  //   console.log(prevProps);
-  //   console.log(prevState);
+  //   console.log("update");
+  // }
+
+  // componentWillUnmount() {
+  //   console.log("unmount");
+  // }
+
+  // componentDidMount() {
+  //   console.log("mount");
   // }
 
   incrementHandle = (increment: number) => () => {
@@ -51,23 +59,11 @@ class CustomCounter extends React.Component<IProps, IState> {
     this.setState({ count: count - decrement });
   };
 
-  timer = () => {
-    console.log("timer");
-    const { title } = this.props;
-    setTimeout(() => {
-      console.log(title);
-    }, 3000);
-  };
-
   render() {
-    console.log("render");
     const { title, limit } = this.props;
     const { count, increment, decrement } = this.state;
-
     return (
       <>
-        {this.timer()}
-
         <ProductCard title={title} count={count}>
           <Button
             title={`Убрать ${decrement} ${title}`}
