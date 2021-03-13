@@ -1,6 +1,6 @@
 import React from "react";
-import ProductCard from "./ProductCard";
-import Button from "./Button";
+import ProductCard from "../../Components/Card";
+import Button from "../../Components/Common/Button";
 
 interface IProps {
   title: string;
@@ -24,6 +24,9 @@ class CustomCounter extends React.Component<IProps, IState> {
   //   if (prevState.count === 3) {
   //     return { increment: 2 };
   //   }
+  //   if (prevState.count === 9) {
+  //     return { increment: 3 };
+  //   }
   //   return null;
   // }
 
@@ -46,7 +49,7 @@ class CustomCounter extends React.Component<IProps, IState> {
   // }
 
   // componentDidMount() {
-  //   console.log("mount");
+  //   console.log("CustomCounter mount");
   // }
 
   incrementHandle = (increment: number) => () => {
@@ -62,6 +65,7 @@ class CustomCounter extends React.Component<IProps, IState> {
   render() {
     const { title, limit } = this.props;
     const { count, increment, decrement } = this.state;
+
     return (
       <>
         <ProductCard title={title} count={count}>

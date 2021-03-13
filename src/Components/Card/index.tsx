@@ -7,10 +7,13 @@ interface IProps {
 }
 
 class ProductCard extends React.PureComponent<IProps> {
-  componentDidMount() {}
+  // componentDidMount() {
+  //   console.log("ProductCard mount");
+  // }
 
   render() {
     const { title, count, children } = this.props;
+
     return (
       <>
         <div className={style.wrapper}>
