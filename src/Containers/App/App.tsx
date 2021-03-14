@@ -1,4 +1,5 @@
 import React from "react";
+import MainPageWrapper from "../../Components/MainPageWrapper";
 
 function App() {
   // eslint-disable-next-line no-console
@@ -6,7 +7,7 @@ function App() {
 
   return (
     <>
-      <div> Hello</div>
+      <MainPageWrapper />
     </>
   );
 }
