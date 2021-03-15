@@ -1,7 +1,7 @@
 import React from "react";
-import style from "./HeaderNavigation.module.scss";
+import style from "./NavMenu.module.scss";
 
-class HeaderNavigation extends React.PureComponent {
+class NavMenu extends React.PureComponent {
   render() {
     return (
       <>
@@ -18,4 +18,4 @@ class HeaderNavigation extends React.PureComponent {
   }
 }
 
-export default HeaderNavigation;
+export default NavMenu;
