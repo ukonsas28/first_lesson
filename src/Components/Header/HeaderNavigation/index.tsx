@@ -10,6 +10,7 @@ class HeaderNavigation extends React.PureComponent {
             <li>О нас</li>
             <li>Главная</li>
             <li>Блог</li>
+            <li>Новости</li>
           </ul>
         </nav>
       </>
