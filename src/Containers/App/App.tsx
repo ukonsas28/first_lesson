@@ -1,10 +1,10 @@
 import React from "react";
-import MainPageWrapper from "../../Components/MainPageWrapper";
+import MainPageContainer from "../MainPageContainer";
 
 function App() {
   return (
     <>
-      <MainPageWrapper />
+      <MainPageContainer />
     </>
   );
 }

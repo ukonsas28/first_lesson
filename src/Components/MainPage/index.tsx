@@ -1,8 +1,8 @@
 import React from "react";
-import Header from "../Header";
-import style from "./MainPageWrapper.module.scss";
+import Header from "../Common/Header";
+import style from "./MainPage.module.scss";
 
-class MainPageWrapper extends React.PureComponent {
+class MainPage extends React.PureComponent {
   render() {
     return (
       <>
@@ -14,4 +14,4 @@ class MainPageWrapper extends React.PureComponent {
   }
 }
 
-export default MainPageWrapper;
+export default MainPage;
