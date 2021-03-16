@@ -4,6 +4,7 @@ import first_slide from "../../../assets/image/first_slide.jpg";
 import second_slide from "../../../assets/image/second_slide.jpg";
 import third_slide from "../../../assets/image/third_slide.jpg";
 import SliderItem from "./SliderItem";
+import SliderButton from "./SliderButton";
 
 interface IState {
   currentImage: number;
@@ -19,15 +20,35 @@ class Slider extends React.Component<any, IState> {
     this.state = { currentImage: 0 };
   }
 
+  prevImage = () => {
+    const { currentImage } = this.state;
+    if (currentImage === 0) {
+      this.setState({ currentImage: imageArr.length - 1 });
+    } else {
+      this.setState({ currentImage: currentImage - 1 });
+    }
+  };
+
+  nextImage = () => {
+    const { currentImage } = this.state;
+    if (currentImage === imageArr.length - 1) {
+      this.setState({ currentImage: 0 });
+    } else {
+      this.setState({ currentImage: currentImage + 1 });
+    }
+  };
+
   render() {
     const { currentImage } = this.state;
     return (
       <>
         <div className={style.slider_wrapper}>
+          <SliderButton handler={this.prevImage} description="prev" />
           <SliderItem
             link={imageArr[currentImage].link}
             description={imageArr[currentImage].description}
           />
+          <SliderButton handler={this.nextImage} description="next" />
         </div>
       </>
     );
