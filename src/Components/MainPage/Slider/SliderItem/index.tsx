@@ -5,7 +5,7 @@ interface IProps {
   link: string;
   description: string;
 }
-class SliderItem extends React.PureComponent<any, IProps> {
+class SliderItem extends React.PureComponent<IProps> {
   render() {
     const { link, description } = this.props;
     return (

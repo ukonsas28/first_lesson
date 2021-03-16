@@ -5,7 +5,7 @@ interface IProps {
   handler(): void;
   description: string;
 }
-class SliderButton extends React.PureComponent<any, IProps> {
+class SliderButton extends React.PureComponent<IProps> {
   render() {
     const { handler, description } = this.props;
     return (
