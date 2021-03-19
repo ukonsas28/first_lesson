@@ -1,8 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { FC, useEffect, useState } from "react";
 
-const TestComponent = () => {
-  const [value, setValue] = useState(true);
-  const [value2, setValue2] = useState(true);
+interface IProps {
+  data: string;
+  name: string;
+}
+const TestComponent: FC<IProps> = (props: IProps) => {
+  const { data, name } = props;
+  const [value, setValue] = useState<boolean>(true);
+  const [value2, setValue2] = useState<boolean>(true);
   let timerId: any = null;
 
   useEffect(() => {
@@ -23,7 +28,7 @@ const TestComponent = () => {
 
   return (
     <>
-      <button type="button" onClick={timer}>
+      {/* <button type="button" onClick={timer}>
         Start timer
       </button>
       <button type="button" onClick={() => setValue(!value)}>
@@ -33,7 +38,18 @@ const TestComponent = () => {
         push2
       </button>
       {`${value}`}
-      {`${value2}`}
+      {`${value2}`} */}
+
+      <main
+        onClick={(e) => console.log(e.currentTarget)}
+        role="presentation"
+        style={{ width: "100%" }}>
+        <div style={{ width: "50%" }}>
+          <button type="button" onClick={(e) => console.log(e.currentTarget)}>
+            push
+          </button>
+        </div>
+      </main>
     </>
   );
 };

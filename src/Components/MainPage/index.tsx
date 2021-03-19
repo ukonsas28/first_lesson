@@ -22,7 +22,7 @@ class MainPage extends React.Component<any, any> {
             onClick={() => this.setState({ value: !value })}>
             TOUCH
           </button>
-          {value && <TestComponent />}
+          {value && <TestComponent data="ddd" name="ddd" />}
           {/* <Slider /> */}
           <Footer />
         </div>
