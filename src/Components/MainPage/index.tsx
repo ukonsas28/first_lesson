@@ -20,8 +20,7 @@ class MainPage extends React.Component<any, any> {
           <button
             type="button"
             onClick={() => this.setState({ value: !value })}>
-            {" "}
-            TOUCH{" "}
+            TOUCH
           </button>
           {value && <TestComponent />}
           {/* <Slider /> */}

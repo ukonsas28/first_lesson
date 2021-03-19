@@ -11,7 +11,7 @@ const TestComponent = () => {
       clearTimeout(timerId);
       console.log("unmount");
     };
-  }, [timerId]);
+  });
 
   useEffect(() => {
     console.log("update");
