@@ -14,6 +14,13 @@ const AuthForm: FC = () => {
           <h1>Авторизация</h1>
           <TextInput setLogin={setLogin} />
           <PasswordInput setPassword={setPassword} />
+          <button
+            type="button"
+            onClick={() =>
+              console.log({ login, password }, "Объект авторизации")
+            }>
+            SUBMIT
+          </button>
         </form>
       </div>
     </>
