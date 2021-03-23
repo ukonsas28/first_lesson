@@ -12,13 +12,17 @@ const AuthForm: FC = () => {
       <div className={style["auth-form_wrapper"]}>
         <form className={style.form}>
           <h1>Авторизация</h1>
-          <TextInput setLogin={setLogin} />
-          <PasswordInput setPassword={setPassword} />
+
+          <TextInput setLogin={setLogin} login={login} />
+          <PasswordInput setPassword={setPassword} password={password} />
+
           <button
             type="button"
-            onClick={() =>
-              console.log({ login, password }, "Объект авторизации")
-            }>
+            onClick={() => {
+              console.log({ login, password }, "Объект авторизации");
+              setLogin("");
+              setPassword("");
+            }}>
             SUBMIT
           </button>
         </form>
