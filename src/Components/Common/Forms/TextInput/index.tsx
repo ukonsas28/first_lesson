@@ -4,19 +4,23 @@ import style from "./TextInput.module.scss";
 interface IProps {
   setLogin: any;
   login: string;
+  title: string;
 }
 
 const TextInput: FC<IProps> = (props: IProps) => {
-  const { setLogin, login } = props;
+  const { setLogin, login, title } = props;
 
   return (
     <>
-      <input
-        className={style.input}
-        type="text"
-        onChange={(e) => setLogin(e.currentTarget.value)}
-        value={login}
-      />
+      <div className={style.input_wrapper}>
+        <span>{title}</span>
+        <input
+          className={style.input}
+          type="text"
+          onChange={(e) => setLogin(e.currentTarget.value)}
+          value={login}
+        />
+      </div>
     </>
   );
 };
