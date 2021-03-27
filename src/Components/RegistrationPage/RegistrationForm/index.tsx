@@ -8,22 +8,50 @@ const RegistrationForm: FC = () => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [returnPassword, setReturnPassword] = useState<string>("");
+
+  const [formValue, setFormValue] = useState({
+    login: "",
+    email: "",
+    password: "",
+    repeatPassword: "",
+  });
+  console.log(formValue);
   return (
     <>
       <div className={style["registration-form_wrapper"]}>
         <form className={style.form}>
           <h1>Регистрация</h1>
-          <TextInput setLogin={setLogin} login={login} title="Login" />
-          <TextInput setLogin={setEmail} login={email} title="Email" />
+          <TextInput
+            setLogin={setLogin}
+            formKey="login"
+            login={login}
+            title="Login"
+            formValue={formValue}
+            setFormValue={setFormValue}
+          />
+          <TextInput
+            setLogin={setEmail}
+            formKey="email"
+            title="Email"
+            login={login}
+            formValue={formValue}
+            setFormValue={setFormValue}
+          />
           <PasswordInput
             setPassword={setPassword}
-            password={password}
+            formKey="password"
             title="Password"
+            password={password}
+            formValue={formValue}
+            setFormValue={setFormValue}
           />
           <PasswordInput
             setPassword={setReturnPassword}
-            password={returnPassword}
+            formKey="returnPassword"
             title="Return password"
+            password={password}
+            formValue={formValue}
+            setFormValue={setFormValue}
           />
 
           <button

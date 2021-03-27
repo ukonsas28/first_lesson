@@ -5,10 +5,21 @@ interface IProps {
   setPassword: any;
   password: string;
   title: string;
+  formValue: any;
+  setFormValue: any;
+  formKey: string;
 }
 
 const PasswordInput: FC<IProps> = (props: IProps) => {
-  const { setPassword, password, title } = props;
+  const {
+    setPassword,
+    password,
+    title,
+    formValue,
+    setFormValue,
+    formKey,
+  } = props;
+
   return (
     <>
       <div className={style.input_wrapper}>
@@ -16,8 +27,10 @@ const PasswordInput: FC<IProps> = (props: IProps) => {
         <input
           className={style.input}
           type="password"
-          onChange={(e) => setPassword(e.currentTarget.value)}
-          value={password}
+          onChange={(e) =>
+            setFormValue({ ...formValue, [formKey]: e.currentTarget.value })
+          }
+          value={formValue.formKey}
         />
       </div>
     </>

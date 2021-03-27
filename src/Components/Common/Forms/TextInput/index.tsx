@@ -5,10 +5,13 @@ interface IProps {
   setLogin: any;
   login: string;
   title: string;
+  formValue: any;
+  setFormValue: any;
+  formKey: string;
 }
 
 const TextInput: FC<IProps> = (props: IProps) => {
-  const { setLogin, login, title } = props;
+  const { setLogin, login, title, formValue, setFormValue, formKey } = props;
 
   return (
     <>
@@ -17,8 +20,10 @@ const TextInput: FC<IProps> = (props: IProps) => {
         <input
           className={style.input}
           type="text"
-          onChange={(e) => setLogin(e.currentTarget.value)}
-          value={login}
+          onChange={(e) =>
+            setFormValue({ ...formValue, [formKey]: e.currentTarget.value })
+          }
+          value={formValue.formKey}
         />
       </div>
     </>

@@ -13,12 +13,12 @@ const AuthForm: FC = () => {
         <form className={style.form}>
           <h1>Авторизация</h1>
 
-          <TextInput setLogin={setLogin} login={login} title="Login" />
+          {/* <TextInput setLogin={setLogin} login={login} title="Login" />
           <PasswordInput
             setPassword={setPassword}
             password={password}
             title="Password"
-          />
+          /> */}
 
           <button
             type="button"
