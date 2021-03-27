@@ -3,6 +3,7 @@ import style from "./Header.module.scss";
 import NavMenu from "./NavMenu";
 import Logo from "./Logo";
 import UserInfo from "./UserInfo";
+import NavButtons from "./NavButtons";
 
 class Header extends React.PureComponent {
   render() {
@@ -11,7 +12,8 @@ class Header extends React.PureComponent {
         <header className={style.header_wrapper}>
           <Logo />
           <NavMenu />
-          <UserInfo />
+          {/* <UserInfo /> */}
+          <NavButtons />
         </header>
       </>
     );

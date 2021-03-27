@@ -15,7 +15,7 @@ const RegistrationForm: FC = () => {
     password: "",
     repeatPassword: "",
   });
-  console.log(formValue);
+
   return (
     <>
       <div className={style["registration-form_wrapper"]}>
