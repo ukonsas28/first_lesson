@@ -2,7 +2,7 @@ import React from "react";
 import style from "./Header.module.scss";
 import NavMenu from "./NavMenu";
 import Logo from "./Logo";
-import UserInfo from "./UserInfo";
+// import UserInfo from "./UserInfo";
 import NavButtons from "./NavButtons";
 
 class Header extends React.PureComponent {

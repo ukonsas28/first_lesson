@@ -1,12 +1,10 @@
 import React from "react";
-import { Route, Switch, useHistory } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import RegistrationPageContainer from "../RegistrationPageContainer";
 import AuthPageContainer from "../AuthPageContainer";
 import MainPageContainer from "../MainPageContainer";
 
 function App() {
-  const history = useHistory();
-  console.log(history);
   return (
     <>
       <Switch>

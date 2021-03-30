@@ -2,8 +2,6 @@ import React, { FC } from "react";
 import style from "./PasswordInput.module.scss";
 
 interface IProps {
-  setPassword: any;
-  password: string;
   title: string;
   formValue: any;
   setFormValue: any;
@@ -11,14 +9,7 @@ interface IProps {
 }
 
 const PasswordInput: FC<IProps> = (props: IProps) => {
-  const {
-    setPassword,
-    password,
-    title,
-    formValue,
-    setFormValue,
-    formKey,
-  } = props;
+  const { title, formValue, setFormValue, formKey } = props;
 
   return (
     <>
@@ -30,7 +21,7 @@ const PasswordInput: FC<IProps> = (props: IProps) => {
           onChange={(e) =>
             setFormValue({ ...formValue, [formKey]: e.currentTarget.value })
           }
-          value={formValue.formKey}
+          value={formValue[formKey]}
         />
       </div>
     </>
