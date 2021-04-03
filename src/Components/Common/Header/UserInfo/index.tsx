@@ -1,14 +1,17 @@
-import React from "react";
+import React, { FC } from "react";
 import style from "./UserInfo.module.scss";
 
-class UserInfo extends React.PureComponent {
-  render() {
-    return (
-      <>
-        <div className={style["user-info_wrapper"]}>Профиль</div>
-      </>
-    );
-  }
+interface IProps {
+  login: string;
 }
+
+const UserInfo: FC<IProps> = (props: IProps) => {
+  const { login } = props;
+  return (
+    <>
+      <div className={style["user-info_wrapper"]}>{login}</div>
+    </>
+  );
+};
 
 export default UserInfo;

@@ -1,4 +1,6 @@
 import React, { FC, useState } from "react";
+import { useDispatch } from "react-redux";
+import { userLoginAction } from "../../../store/actions";
 import PasswordInput from "../../Common/Forms/PasswordInput";
 import TextInput from "../../Common/Forms/TextInput";
 import style from "./AuthForm.module.scss";
@@ -8,6 +10,12 @@ const AuthForm: FC = () => {
     login: "",
     password: "",
   });
+  const dispatch = useDispatch();
+
+  const onSubmit = () => {
+    dispatch(userLoginAction(authFormValue.login));
+    setAuthFormValue({ login: "", password: "" });
+  };
 
   return (
     <>
@@ -28,12 +36,7 @@ const AuthForm: FC = () => {
             title="Password"
           />
 
-          <button
-            type="button"
-            className={style.btn}
-            onClick={() => {
-              setAuthFormValue({ login: "", password: "" });
-            }}>
+          <button type="button" className={style.btn} onClick={onSubmit}>
             LOGIN
           </button>
         </form>

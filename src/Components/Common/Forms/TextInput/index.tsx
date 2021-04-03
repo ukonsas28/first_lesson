@@ -10,7 +10,7 @@ interface IProps {
 
 const TextInput: FC<IProps> = (props: IProps) => {
   const { title, formValue, setFormValue, formKey } = props;
-  console.log(formValue[formKey]);
+
   return (
     <>
       <div className={style.input_wrapper}>
