@@ -1,16 +1,16 @@
-import { IState } from "./types";
+import { IRegistrationState } from "./types";
 import { ActionType } from "./actions";
 
-const initialState: IState = {
+const initialState: IRegistrationState = {
   login: "",
 };
 
-const reducer = (
+const registrationReducer = (
   state = initialState,
   action: { type: string; payload?: any }
 ) => {
   switch (action.type) {
-    case ActionType.userLogin:
+    case ActionType.userRegistration:
       return {
         ...state,
         login: action.payload,
@@ -20,4 +20,4 @@ const reducer = (
   }
 };
 
-export default reducer;
+export default registrationReducer;

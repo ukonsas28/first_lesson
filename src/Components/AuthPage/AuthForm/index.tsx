@@ -1,6 +1,6 @@
 import React, { FC, useState } from "react";
 import { useDispatch } from "react-redux";
-import { userLoginAction } from "../../../store/actions";
+import { userLoginAction } from "../../../store/AuthPage/actions";
 import PasswordInput from "../../Common/Forms/PasswordInput";
 import TextInput from "../../Common/Forms/TextInput";
 import style from "./AuthForm.module.scss";
