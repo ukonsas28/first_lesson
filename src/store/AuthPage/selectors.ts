@@ -1,5 +1,5 @@
-import { IAuthState } from "./types";
+import IState from "../rootTypes";
 
-export const getUserLogin = (state: IAuthState) => state.login;
+export const getUserLogin = (state: IState) => state.auth.login;
 
-export const get = (state: IAuthState) => state.login;
+export const get = (state: IState) => state.auth.login;

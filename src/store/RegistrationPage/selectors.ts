@@ -1,5 +1,5 @@
-import { IRegistrationState } from "./types";
+import IState from "../rootTypes";
 
-export const getUserLogin = (state: IRegistrationState) => state.login;
+export const getUserLogin = (state: IState) => state.registration.login;
 
-export const get = (state: IRegistrationState) => state.login;
+export const get = (state: IState) => state.registration.login;
