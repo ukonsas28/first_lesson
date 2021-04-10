@@ -1,10 +1,10 @@
-export enum ActionType {
+export enum AuthPageActionType {
   userLogin = "USER_LOGIN",
 }
 
 export const userLoginAction = (login: string) => {
   return {
-    type: ActionType.userLogin,
+    type: AuthPageActionType.userLogin,
     payload: login,
   };
 };
