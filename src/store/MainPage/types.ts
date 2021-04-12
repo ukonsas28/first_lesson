@@ -1,3 +1,3 @@
 export interface IMainPage {
-  data: any;
+  data: any[];
 }

@@ -1,18 +1,14 @@
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
 import style from "./Slider.module.scss";
-import first_slide from "../../../assets/image/first_slide.jpg";
-import second_slide from "../../../assets/image/second_slide.jpg";
-import third_slide from "../../../assets/image/third_slide.jpg";
 import SliderItem from "./SliderItem";
 import SliderButton from "./SliderButton";
+import { getSliderData } from "../../../store/MainPage/selectors";
 
-const imageArr = [
-  { id: 1, link: first_slide, description: "Красивая картинка с горами №1" },
-  { id: 2, link: second_slide, description: "Красивая картинка с горами №2" },
-  { id: 3, link: third_slide, description: "Красивая картинка с горами №23" },
-];
 const Slider = () => {
   const [sliderData, setSliderData] = useState({ currentImage: 0 });
+
+  const imageArr = useSelector(getSliderData);
 
   const prevImage = () => {
     const { currentImage } = sliderData;
@@ -38,8 +34,8 @@ const Slider = () => {
       <div className={style.slider_wrapper}>
         <SliderButton handler={prevImage} description="prev" />
         <SliderItem
-          link={imageArr[currentImage].link}
-          description={imageArr[currentImage].description}
+          link={imageArr[currentImage]?.link}
+          description={imageArr[currentImage]?.description}
         />
         <SliderButton handler={nextImage} description="next" />
       </div>

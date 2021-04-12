@@ -2,7 +2,7 @@ import { IMainPage } from "./types";
 import { MainPageActionType } from "./actions";
 
 const initialState: IMainPage = {
-  data: "",
+  data: [],
 };
 
 const mainPageReducer = (
