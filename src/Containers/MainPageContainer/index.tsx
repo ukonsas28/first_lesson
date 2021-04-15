@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
+import axios from "axios";
 import MainPage from "../../Components/MainPage";
 import first_slide from "../../assets/image/first_slide.jpg";
 import second_slide from "../../assets/image/second_slide.jpg";
@@ -20,6 +21,15 @@ const MainPageContainer = () => {
   };
 
   useEffect(getData, [dispatch]);
+
+  const testAxios = async () => {
+    const a = await axios.get("https://jsonplaceholder.typicode.com/posts");
+    console.log(a);
+  };
+
+  useEffect(() => {
+    testAxios();
+  }, [dispatch]);
 
   return (
     <>
