@@ -3,12 +3,11 @@ import { useSelector } from "react-redux";
 import style from "./Slider.module.scss";
 import SliderItem from "./SliderItem";
 import SliderButton from "./SliderButton";
-import { getSliderData } from "../../../store/MainPage/selectors";
 
 const Slider = () => {
   const [sliderData, setSliderData] = useState({ currentImage: 0 });
 
-  const imageArr = useSelector(getSliderData);
+  const imageArr: any = [];
 
   const prevImage = () => {
     const { currentImage } = sliderData;

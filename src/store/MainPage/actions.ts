@@ -1,10 +1,15 @@
+import network from "../../network";
+
 export enum MainPageActionType {
-  getSliderData = "GET_SLIDER_DATA",
+  getPostData = "GET_SLIDER_DATA",
 }
 
-export const getSliderDataAction = (data: any) => {
-  return {
-    type: MainPageActionType.getSliderData,
-    payload: data,
+export const getPostDataAction = () => {
+  return async (dispatch: any) => {
+    const data = await network.getRequest("posts");
+    dispatch({
+      type: MainPageActionType.getPostData,
+      payload: data,
+    });
   };
 };

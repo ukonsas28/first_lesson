@@ -1,12 +1,12 @@
 import React from "react";
-import Slider from "./Slider";
 import PageWrapper from "../Common/PageWrapper";
+import Posts from "./Posts";
 
 const MainPage = () => {
   return (
     <>
       <PageWrapper>
-        <Slider />
+        <Posts />
       </PageWrapper>
     </>
   );

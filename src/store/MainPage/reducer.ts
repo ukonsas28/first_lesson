@@ -10,7 +10,7 @@ const mainPageReducer = (
   action: { type: string; payload?: any }
 ) => {
   switch (action.type) {
-    case MainPageActionType.getSliderData:
+    case MainPageActionType.getPostData:
       return {
         ...state,
         data: action.payload,
