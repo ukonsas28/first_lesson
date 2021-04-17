@@ -1,8 +1,9 @@
-import { IMainPage } from "./types";
+import { IMainPage, IPost } from "./types";
 import { MainPageActionType } from "./actions";
 
 const initialState: IMainPage = {
   data: [],
+  posts: [] as IPost[],
 };
 
 const mainPageReducer = (
@@ -14,6 +15,11 @@ const mainPageReducer = (
       return {
         ...state,
         data: action.payload,
+      };
+    case MainPageActionType.fetchPosts:
+      return {
+        ...state,
+        posts: [...action.payload],
       };
     default:
       return state;
