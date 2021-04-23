@@ -21,6 +21,7 @@ class Network {
   }
 }
 
-const network = new Network("https://jsonplaceholder.typicode.com");
+// const network = new Network("https://jsonplaceholder.typicode.com");
+const network = new Network("https://rickandmortyapi.com/api");
 
 export default network;

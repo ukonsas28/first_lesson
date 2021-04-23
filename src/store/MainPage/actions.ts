@@ -1,5 +1,5 @@
+import { Dispatch } from "react";
 import network from "../../network";
-import { IPost } from "./types";
 
 export enum MainPageActionType {
   getSliderData = "GET_SLIDER_DATA",
@@ -13,17 +13,13 @@ export const getSliderDataAction = (data: any) => {
   };
 };
 
-// export const fetchPostDataAction = (posts: IPost[]) => {
-//   return {
-//     type: MainPageActionType.fetchPosts,
-//     payload: posts,
-//   };
-// };
-
-export const fetchPostDataAction = async () => {
-  const data: any = await network.getRequest("/posts");
-  return {
-    type: MainPageActionType.fetchPosts,
-    payload: data,
+export const fetchPostDataAction = () => {
+  return async (dispatch: Dispatch<{ type: string; payload: [] }>) => {
+    const data: any = await network.getRequest("/character");
+    console.log(data);
+    dispatch({
+      type: MainPageActionType.getSliderData,
+      payload: data.results,
+    });
   };
 };

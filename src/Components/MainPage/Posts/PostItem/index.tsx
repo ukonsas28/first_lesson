@@ -8,9 +8,9 @@ interface IProps {
 
 const PostItem: FC<IProps> = ({ postData }: IProps) => {
   const { title, body } = postData;
-  console.log(postData.id);
   return (
     <>
+
       <div className={style.wrapper}>
         <h1>{title}</h1>
         <p>{body}</p>
