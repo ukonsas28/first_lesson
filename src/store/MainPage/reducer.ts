@@ -4,6 +4,7 @@ import { MainPageActionType } from "./actions";
 const initialState: IMainPage = {
   data: [],
   posts: [] as IPost[],
+  characters: [],
 };
 
 const mainPageReducer = (
@@ -20,6 +21,11 @@ const mainPageReducer = (
       return {
         ...state,
         posts: [...action.payload],
+      };
+    case MainPageActionType.fetchCharacters:
+      return {
+        ...state,
+        characters: [...action.payload],
       };
     default:
       return state;

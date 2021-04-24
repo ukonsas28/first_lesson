@@ -1,6 +1,7 @@
 export interface IMainPage {
   data: any[];
   posts: IPost[];
+  characters: any[];
 }
 
 export interface IPost {

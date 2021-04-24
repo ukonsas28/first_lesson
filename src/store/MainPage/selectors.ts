@@ -4,3 +4,5 @@ import TState from "../rootType";
 export const getSliderData = (state: TState) => state.main.data;
 
 export const getPostData = (state: TState) => state.main.posts;
+
+export const getCharactersData = (state: TState) => state.main.characters;
